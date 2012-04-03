@@ -6,7 +6,7 @@ start(N, M, Messages)
 
 Each process had to respond to a 'stop' message as well. There were two different way it suggested doing it. One was to have a master process that assembled the ring then sent the message down the ring the other was have each process spawn the next process until you reach N Processes. I chose the later. 
 
-Each process is given the First PID that started the ring and N, and if N is grearter than zero it then spawns another processing fowarding the First PID (not it self) and N - 1. When N = 0 the Pid given to the main loop is the First Pid to complete the ring. 
+Each process is given the First PID that started the ring and N, and if N is greater than zero it then spawns another processing forwarding the First PID (not it self) and N - 1. When N = 0 the Pid given to the main loop is the First PID to complete the ring. 
 
 When the First loop gets the message it sent it states the message made it around the ring. This determined by including the PID in the tuple structure that sent the initial message to be passed around. 
 
